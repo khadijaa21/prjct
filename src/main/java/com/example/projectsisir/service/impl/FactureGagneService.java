@@ -44,10 +44,7 @@ public class FactureGagneService implements FactureGagneFacade {
         return factureGagneDao.deleteByDateFacture(dateFacture);
     }
 
-    @Override
-    public List<FactureGagne> findBySocieteIceAndDateFactureBetween(String ice, Date startDate, Date endDate) {
-        return factureGagneDao.findBySocieteIceAndDateFactureBetween(ice, startDate, endDate);
-    }
+
 
     @Override
     public int save(FactureGagne factureGagne)  {

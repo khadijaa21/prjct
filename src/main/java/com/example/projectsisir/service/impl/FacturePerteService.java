@@ -25,14 +25,6 @@ public class FacturePerteService implements FacturePerteFacade {
         return facturePerteDao.findAll();
     }
 
-    public FacturePerte findByMontantHC(double montantHC) {
-        return facturePerteDao.findByMontantHC(montantHC);
-    }
-
-    public int deleteByMontantHC(double montantHC) {
-        return facturePerteDao.deleteByMontantHC(montantHC);
-    }
-
     public int save(FacturePerte facturePerte) {
         TaxeIS taxeIS = new TaxeIS();
         if (taxeIS == null || taxeIS.getSociete() == null || facturePerte == null || facturePerte.getDateFacture() == null) {

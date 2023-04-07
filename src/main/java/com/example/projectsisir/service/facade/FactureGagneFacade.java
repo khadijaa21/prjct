@@ -14,8 +14,6 @@ public interface FactureGagneFacade {
 
     int deleteByDateFacture(Date dateFacture);
 
-    List<FactureGagne> findBySocieteIceAndDateFactureBetween(String ice, Date startDate, Date endDate);
-
     int save(FactureGagne factureGagne);
 
     int deleteById(Long id);

@@ -17,8 +17,6 @@ public interface FacturePerteFacade {
 
      int updateByCode(FacturePerte update);
 
-     FacturePerte findByMontantHC(double montantHC);
 
-     int deleteByMontantHC(double montantHC);
 
 }
