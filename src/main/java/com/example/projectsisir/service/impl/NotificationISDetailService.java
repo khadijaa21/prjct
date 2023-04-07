@@ -33,11 +33,7 @@ public class NotificationISDetailService implements NotificationISDetailFacade {
     @Autowired
     private NotificationIsDetailDao notificationIsDetailDao;
 
-    public NotificationISDetail findByLibelle(String libelle) {
-        return notificationIsDetailDao.findByLibelle(libelle);
-    }
-
-    public int deleteByLibelle(String libelle) {
-        return notificationIsDetailDao.deleteByLibelle(libelle);
-    }
 }
+
+
+
