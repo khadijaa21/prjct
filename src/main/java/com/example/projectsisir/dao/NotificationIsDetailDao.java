@@ -12,8 +12,8 @@ import java.util.List;
 
 public interface NotificationIsDetailDao extends JpaRepository<NotificationISDetail, Long> {
 
-    NotificationISDetail findByLibelle(String libelle);
-    int deleteByLibelle(String libelle);
+    // NotificationISDetail findByLibelle(String libelle);
+   // int deleteByLibelle(String libelle);
 
 
     @Query("SELECT nd FROM NotificationISDetail nd WHERE NOT EXISTS "
