@@ -28,10 +28,16 @@ public class EmployeService implements EmployeFacade {
     public int deleteByCin(String cin) {
         return employeDao.deleteByCin(cin);
     }
+    @Override
+    public int currentEmployesCount(String ice) {
+        var societe = societeService.findByIce(ice);
+        if (societe == null) {
+            throw new RuntimeException("Societe not found");
+        }
 
-    public boolean existsById(Long id) {
-        return employeDao.existsById(id);
+        return employeDao.currentEmployesCount(ice);
     }
+
 
     public int save(Employe employe) {
         if (findByCin(employe.getCin()) != null) {

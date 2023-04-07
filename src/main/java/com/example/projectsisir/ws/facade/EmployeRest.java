@@ -21,10 +21,6 @@ public class EmployeRest {
     @Autowired
     private EmployeConverter employeConverter;
 
-    @GetMapping("/id/{id}")
-    public boolean existsById(Long id) {
-        return employeFacade.existsById(id);
-    }
 
     @GetMapping("/cin/{cin}")
     public EmployeDto findByCin(@PathVariable String cin) {
@@ -57,6 +53,10 @@ public class EmployeRest {
     @PostMapping("/")
     public int save(@RequestBody Employe employe) {
         return employeFacade.save(employe);
+    }
+    @GetMapping("/count")
+    public int currentEmployeesCount(@PathVariable String ice) {
+        return employeFacade.currentEmployesCount(ice);
     }
 }
 
