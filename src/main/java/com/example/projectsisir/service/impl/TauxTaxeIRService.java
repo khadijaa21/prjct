@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class TauxTaxeIRService implements TauxTaxeIRFacade {
 
@@ -75,6 +76,18 @@ public class TauxTaxeIRService implements TauxTaxeIRFacade {
         return null;
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 

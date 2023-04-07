@@ -1,7 +1,6 @@
 package com.example.projectsisir.service.facade;
 
 
-
 import com.example.projectsisir.bean.TaxeIR;
 import com.example.projectsisir.ws.dto.ResStatDto;
 
@@ -13,10 +12,12 @@ public interface TaxeIRFacade {
   public int deleteByMoisAndAnneeAndSocieteIce(int mois, int annee, String ice);
   public  int save(TaxeIR taxeIR);
 
+  /*int exec(TaxeIR taxeIR);*/
+
   /*public  int updateTaxeIR(TaxeIR taxeIR, int mois,int annee, String cin);*/
   public  int updateTaxeIR(TaxeIR taxeIR);
 
   public List<ResStatDto> calculStatic(int annee);
 
-  public  List<TaxeIR> findAll();
+  public List<TaxeIR> findAll();
 }

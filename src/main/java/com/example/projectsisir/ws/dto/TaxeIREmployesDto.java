@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class TaxeIREmployesDto {
 
-
+private  TauxTaxeIRDto tauxTaxeIRDto ;
     private Long id;
 
     private TauxTaxeIR tauxTaxeIR;
@@ -20,4 +20,5 @@ public class TaxeIREmployesDto {
     private Boolean employed ;
 
     private Employe employe;
+
 }

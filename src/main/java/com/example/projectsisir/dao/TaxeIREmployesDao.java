@@ -7,12 +7,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
 @Repository
 public interface TaxeIREmployesDao extends JpaRepository<TaxeIREmployes,Long> {
 
+
+
     List<TaxeIREmployes> findByTaxeIRMoisAndTaxeIRAnneeAndSocieteIce(int mois, int annee, String ice);
 
-
+    TaxeIREmployes findByEmployeCin(String cin);
 
     int deleteByTaxeIRMoisAndTaxeIRAnneeAndSocieteIce(int mois, int annee, String ice);
 

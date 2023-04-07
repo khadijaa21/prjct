@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/te")
 public class TaxeIREmployesRest {
@@ -29,10 +30,10 @@ public class TaxeIREmployesRest {
    public String sqzHello(){
         return "jamilaaaaaaaazlEZETZI";
     }
-
-
-
-
+    @PutMapping("/Taxe")
+    public void update(@RequestBody  List<TaxeIREmployes> commandeItems) {
+        taxeIREmployesFacade.update(commandeItems);
+    }
 
     @DeleteMapping("taxe/mois/{mois}/annee/{annee}/ice/{ice}")
     public int deleteByTaxeIRMoisAndTaxeIRAnneeAndSocieteIce(@PathVariable int mois, @PathVariable int annee,@PathVariable String ice ) {

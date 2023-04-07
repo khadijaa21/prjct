@@ -1,6 +1,4 @@
 package com.example.projectsisir.ws.converter;
-
-
 import com.example.projectsisir.bean.TaxeIREmployes;
 import com.example.projectsisir.ws.dto.TaxeIREmployesDto;
 import org.springframework.stereotype.Component;

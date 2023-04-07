@@ -9,6 +9,8 @@ import java.util.List;
 
 @Data
 public class TaxeIRDto {
+
+
     private Long id;
     private int mois;
     private int annee;
@@ -19,5 +21,8 @@ public class TaxeIRDto {
     private double salaireBrute;
     private double montantIR;
     private List<TaxeIREmployes> taxeIREmployes;
+
+
+
 
 }

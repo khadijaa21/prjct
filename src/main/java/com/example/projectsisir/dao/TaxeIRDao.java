@@ -25,6 +25,7 @@ public interface TaxeIRDao extends JpaRepository<TaxeIR, Long> {
 
     @Query("select sum(t.montantIR)from TaxeIR t where t.mois=:mois And t.annee=:annee")
     BigDecimal calculStatic(@Param("annee") int annee , @Param("mois") int mois );
+
 }
 
 
