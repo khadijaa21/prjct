@@ -21,6 +21,49 @@ public class TaxeIRRest {
 
     @Autowired
     private TaxeIRConverter taxeIRConverter;
+    @Value("${myPath}")
+    private String path;
+
+
+
+    @GetMapping("/genpdf/{fileName}/mois/{mois}/annee/{annee}/ice/{ice}")
+    HttpEntity<byte[]> createPdf(@PathVariable("fileName") String fileName, @PathVariable int mois,  @PathVariable int  annee , @PathVariable String ice ) throws IOException {
+        TaxeIR taxeIR = taxeIRService.findByMoisAndAnneeAndSocieteIce(mois,annee,ice);
+
+        Map<String, String > data= new HashMap<>();
+        data.put("ice",taxeIR.getSociete().getIce());
+        Map<String,Integer > daja = new HashMap<>();
+        daja.put("mois",taxeIR.getMois());
+        daja.put("annee",taxeIR.getAnnee());
+
+        Map<String, Double > dada= new HashMap<>();
+        dada.put("salaireBrute",taxeIR.getSalaireBrute());
+        dada.put("salaireNet",taxeIR.getSalaireNet());
+        dada.put("montantIr",taxeIR.getMontantIR());
+
+        data.put("libelle",taxeIR.getSociete().getLibelle());
+
+        for (TaxeIREmployes t : taxeIR.getTaxeIREmployes()) {
+
+            data.put("nom",t.getEmploye().getNom());
+            data.put("prenom",t.getEmploye().getPrenom());
+            data.put("cin",t.getEmploye().getCin());
+
+            dada.put("s",t.getSalaireNet());
+            dada.put("t",t.getSalaireBrute());
+            dada.put("r",t.getMontantIR());
+
+        }
+
+
+
+        HttpEntity<byte[]> pdf = PdfUtil.createPdf("ice111.pdf",path,data,daja,dada);
+
+        return pdf;
+
+    }
+
+
 
     @GetMapping("/mois/{mois}/annee/{annee}/ice/{ice}")
     public TaxeIRDto findByMoisAndAnneeAndSocieteIce(@PathVariable int mois, @PathVariable int annee, @PathVariable String ice) {
